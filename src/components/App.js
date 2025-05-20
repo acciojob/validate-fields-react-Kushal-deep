@@ -8,7 +8,8 @@ const App = () => {
   const [error,setError]=useState("")
 
 
-const handleSubmit = () => {
+const handleSubmit = (e) => {
+  e.preventDefault();
   if(user.trim()==="" || pass.trim()===""){
     setError("Both the fields are required.")
 
@@ -23,11 +24,12 @@ const handleSubmit = () => {
     <div>
         {/* Do not remove the main div */}
         
-
+<form onSubmit={handleSubmit}>
         <input  id="username" type="text" value={user} onChange={(e)=>Setuser(e.target.value)}/>
         <input  id="password" type="password" value={pass} onChange={(e)=>setPass(e.target.value)}/>
 
-        <button onClick={handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
+        </form>
 
         {
           error &&<p id="errorMessage" style={{color:"red"}}>{error}</p>
