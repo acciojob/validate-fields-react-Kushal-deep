@@ -11,7 +11,7 @@ const App = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
   if(user.trim()==="" || pass.trim()===""){
-    setError("Both the fields are required.")
+    setError("Both username and password are required.")
 
 
   }
